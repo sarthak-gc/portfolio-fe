@@ -1,0 +1,10 @@
+[
+  {
+    "line": "'HTML/CSS/JS', 'TypeScript', 'React', 'Node.js', 'Express.js', 'Tailwind', 'Zustand', 'Axios', 'Git/Github'",
+    "number": 20
+  },
+  {
+    "line": "'MongoDB', 'Prisma', 'REST APIs', 'JWT', 'Hono', 'Web Sockets', 'Redis', 'Docker', 'Zod'",
+    "number": 21
+  }
+]
