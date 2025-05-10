@@ -9,7 +9,7 @@ const CodeEditorAboutMe = ({
   highlightedLine,
 }: CodeEditorLinePropI) => {
   return (
-    <div className="flex flex-col mt-4">
+    <div className="flex flex-col mt-4 lg:w-full">
       {codeLines.map((line) => (
         <div
           className="relative"

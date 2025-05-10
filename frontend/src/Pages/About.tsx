@@ -63,8 +63,8 @@ const About = () => {
   ];
 
   return (
-    <div ref={aboutRef} className="bg-[#131513] md:px-40 overflow-scroll ">
-      <div className="flex space-x-0 ">
+    <div ref={aboutRef} className="bg-[#131513] md:pl-40 overflow-scroll">
+      <div className="flex space-x-0 lg:w-full">
         <CodeEditorLineNumbers
           codeLines={codeLines}
           highlightedLine={highlightedLine}
