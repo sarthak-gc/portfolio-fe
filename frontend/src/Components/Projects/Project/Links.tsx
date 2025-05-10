@@ -1,6 +1,6 @@
 import { DemoLinkLogo } from "@/Components/Logos/DemoLinkLogo";
 import { GithubLogo } from "@/Components/Logos/GithubLogo";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 import {
   Tooltip,
   TooltipContent,
