@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import type { ProjectProps } from "../../../Pages/Projects";
 const Cards = ({ project }: { project: ProjectProps }) => {
   return (
-    <Link to={`/project/${project.projectId}`}>
+    <Link to={`/project/${project.projectId}`} state={project}>
       <motion.div className=" w-full relative">
         <img
           className="object-cover w-full aspect-square"
