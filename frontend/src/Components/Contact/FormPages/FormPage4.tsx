@@ -5,13 +5,9 @@ interface FormPage4Props {
 
 export const FormPage4 = ({ sending, sent }: FormPage4Props) => {
   return (
-    <div>
-      {sending && <div className="text-yellow-500">Sending...</div>}
-      {sent && (
-        <div className="text-green-500">
-          Message sent, will get in touch soon!
-        </div>
-      )}
+    <div className="text-2xl">
+      {sending && <div>Sending...</div>}
+      {sent && <div>Message sent, will get in touch soon!</div>}
     </div>
   );
 };
