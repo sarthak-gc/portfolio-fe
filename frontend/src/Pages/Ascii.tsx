@@ -45,7 +45,7 @@ const Ascii = () => {
   return (
     <div className="bg-black text-green-600 overflow-hidden selection:text-[#FF00FF] selection:bg-black">
       {yAxisBorder}
-      <div className=" ascii h-screen overflow-hidden text-center  text-green-600 overflow-x-auto ">
+      <div className=" text-center   overflow-x-auto ">
         <pre className="whitespace-pre font-mono text-lg leading-tight ">
           {ascii}
         </pre>
@@ -56,5 +56,3 @@ const Ascii = () => {
 };
 
 export default Ascii;
-
-<pre className="whitespace-pre font-mono text-lg leading-tight selection:text-[#FF00FF] selection:bg-black"></pre>;

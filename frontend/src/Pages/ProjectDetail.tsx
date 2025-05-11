@@ -56,13 +56,15 @@ const ProjectDetail = () => {
           opts={{
             align: "start",
           }}
-          className="w-3/4 mb-20 h-[30vh] flex items-center"
+          className="w-3/4 mb-20  flex items-center"
         >
-          <CarouselContent>
+          <CarouselContent className="w-full">
             {imagesUrl.map((imageUrl, index) => (
               <CarouselItem
                 key={index}
-                className={`basis-${imagesLength < 3 ? "1/2" : "1/3"}`}
+                className={`${
+                  imagesLength < 3 ? "md:basis-1/2 w-[35%]" : "md:basis-1/3"
+                }`}
               >
                 <motion.img
                   src={imageUrl}

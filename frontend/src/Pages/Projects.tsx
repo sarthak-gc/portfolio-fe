@@ -30,7 +30,6 @@ export interface ProjectProps {
   TechUsed: string[];
   githubLink: string;
   demoLink: string;
-  background: string;
 }
 
 const Projects = () => {
@@ -38,8 +37,7 @@ const Projects = () => {
   const [index, set] = useState(0);
   const [clickedArea, setClickedArea] = useState("");
 
-  // const { projects, loading, error } = useProjects();
-  const projects = useProjects().projects;
+  const { projects, loading, error } = useProjects();
 
   const onRightClick = () => {
     setClickedArea("Right");
@@ -79,9 +77,9 @@ const Projects = () => {
     transRef.start();
   }, [index, transRef]);
 
-  // if (loading || error) {
-  //   return <div className="bg-black w-full h-full"></div>;
-  // }
+  if (loading || error) {
+    return <div className="bg-black w-full h-full"></div>;
+  }
   return (
     <motion.div
       ref={projectRef}
@@ -107,10 +105,9 @@ export default Projects;
 const Page = ({ style, projects, index }: PagePropI) => (
   <animated.div
     onClick={(e: MouseEvent) => e.stopPropagation()}
-    className="cursor-pointer w-[min(75%,500px)]"
+    className="cursor-pointer w-[min(75%,500px)] bg-gray-800 py-4 rounded-md"
     style={{
       ...style,
-      background: projects[index] ? projects[index].background : "",
     }}
   >
     {projects[index] && <Cards project={projects[index]} />}
