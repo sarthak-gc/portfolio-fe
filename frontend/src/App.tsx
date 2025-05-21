@@ -39,6 +39,7 @@ const App = () => {
       path: "/project/:projectId",
       element: (
         <Suspense fallback={<div className="bg-black w-screen h-screen"></div>}>
+          <Navbar />
           <ProjectDetail />
         </Suspense>
       ),
