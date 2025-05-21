@@ -102,13 +102,15 @@ const ProjectDetail = () => {
                   imagesLength < 3 ? "md:basis-1/2 w-[35%]" : "md:basis-1/3"
                 }`}
               >
-                <motion.img
-                  src={imageUrl}
-                  alt={`screenshot ${index + 1}`}
+                <motion.a
+                  target="_blank"
+                  href={imageUrl}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                />
+                >
+                  <img src={imageUrl} alt={`screenshot ${index + 1}`} />
+                </motion.a>
               </CarouselItem>
             ))}
           </CarouselContent>
