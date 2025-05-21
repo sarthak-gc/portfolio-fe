@@ -12,18 +12,54 @@ import Thumbnail from "@/Components/Projects/Project/Thumbnail";
 import ProjectName from "@/Components/Projects/Project/Name";
 import Description from "@/Components/Projects/Project/Description";
 import Tools from "@/Components/Projects/Project/Tools";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import type { ProjectProps } from "./Projects";
+import { useEffect, useState } from "react";
 
 const ProjectDetail = () => {
   const location = useLocation();
   const state = location.state || null;
+  const projectId = useParams().projectId;
 
-  if (!state) {
-    return <>Inaccessible from url, click project to view details</>;
+  const [project, setProject] = useState<ProjectProps | null>(state);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    if (!state) {
+      setLoading(true);
+      fetch(
+        `https://for-cname.justfordiscord456.workers.dev/project/detail/${projectId}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setProject(data.project);
+        })
+        .catch((err) => {
+          setError("Failed to load project data.");
+          console.error(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  }, [state, projectId]);
+
+  if (loading) {
+    return <div className="text-white">Loading project details...</div>;
   }
 
-  const project: ProjectProps = state;
+  if (error) {
+    return (
+      <div className="text-white">
+        Inaccessible from url, click project to view details
+      </div>
+    );
+  }
+
+  if (!project) {
+    return <div className="text-white">Project not found.</div>;
+  }
+
   const {
     name,
     description,
@@ -33,7 +69,6 @@ const ProjectDetail = () => {
     demoLink,
     TechUsed,
   } = project;
-
   const imagesLength = imagesUrl.length;
   return (
     <div className={`bg-black p-8 text-white  `}>
