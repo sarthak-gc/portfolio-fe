@@ -16,7 +16,6 @@ const useProjects = () => {
         const response = await axios.get(
           "https://for-cname.justfordiscord456.workers.dev/projects/details/all"
         );
-        console.log(response.data.data);
         setProjects(response.data.data);
       } catch (err) {
         if (err instanceof AxiosError) setError(err.response?.data);

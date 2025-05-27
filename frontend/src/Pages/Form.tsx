@@ -54,13 +54,11 @@ const Form = ({ isClicked, setIsClicked }: FormPropI) => {
     if (step == 1) {
       if (!formData.name.trim()) {
         newIsValid.name = false;
-        console.log("here");
         isFormValid = false;
       }
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (!formData.email.trim() || !emailRegex.test(formData.email)) {
         newIsValid.email = false;
-        console.log("here");
         isFormValid = false;
       }
     }

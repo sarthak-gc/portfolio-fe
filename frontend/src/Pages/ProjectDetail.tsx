@@ -32,7 +32,6 @@ const ProjectDetail = () => {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.data);
           setProject(data.data);
         })
         .catch((err) => {
