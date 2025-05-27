@@ -105,7 +105,7 @@ export default Projects;
 const Page = ({ style, projects, index }: PagePropI) => (
   <animated.div
     onClick={(e: MouseEvent) => e.stopPropagation()}
-    className="cursor-pointer w-[min(75%,500px)] bg-gray-800 py-4 rounded-md"
+    className="cursor-pointer w-[min(70%,450px)] bg-gray-800 py-4 rounded-md"
     style={{
       ...style,
     }}

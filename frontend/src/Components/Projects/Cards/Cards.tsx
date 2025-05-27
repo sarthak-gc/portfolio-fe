@@ -13,7 +13,7 @@ const Cards = ({ project }: { project: ProjectProps }) => {
         <div className="px-3">
           <span>{project.name}</span>
           <br />
-          <p>{project.description}</p>
+          <p className="line-clamp-3">{project.description}</p>
           <div className="flex flex-col shrink0">
             <span className="my-2">Tools Used: </span>
             <div className="space-y-2 space-x-2 grid lg:grid-cols-4 grid-cols-3">
