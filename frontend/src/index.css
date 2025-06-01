@@ -158,3 +158,46 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes movingBorder {
+  0% {
+    border-top-color: yellow;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  20% {
+    border-top-color: transparent;
+    border-right-color: yellow;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  40% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: yellow;
+    border-left-color: transparent;
+  }
+  60% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: yellow;
+  }
+  80% {
+    border-top-color: yellow;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    border-top-color: yellow;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.border-thing {
+  border-color: yellow transparent transparent transparent;
+  animation: movingBorder 2s linear infinite;
+}

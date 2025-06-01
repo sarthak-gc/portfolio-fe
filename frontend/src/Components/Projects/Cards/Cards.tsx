@@ -11,7 +11,12 @@ const Cards = ({ project }: { project: ProjectProps }) => {
           alt={project.name}
         />
         <div className="px-3">
-          <span>{project.name}</span>
+          <span>
+            {project.name}{" "}
+            {project.working && (
+              <span className="text-yellow-400">(Incomplete)</span>
+            )}
+          </span>
           <br />
           <p className="line-clamp-3">{project.description}</p>
           <div className="flex flex-col shrink0">

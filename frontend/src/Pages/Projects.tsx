@@ -30,6 +30,7 @@ export interface ProjectProps {
   TechUsed: string[];
   githubLink: string;
   demoLink: string;
+  working?: boolean;
 }
 
 const Projects = () => {
@@ -105,7 +106,11 @@ export default Projects;
 const Page = ({ style, projects, index }: PagePropI) => (
   <animated.div
     onClick={(e: MouseEvent) => e.stopPropagation()}
-    className="cursor-pointer w-[min(70%,450px)] bg-gray-800 py-4 rounded-md"
+    className={`cursor-pointer w-[min(70%,450px)] ${
+      projects[index].working
+        ? " border-4 border-dashed border-yellow-400 border-thing"
+        : ""
+    } bg-gray-800   py-4 rounded-md`}
     style={{
       ...style,
     }}

@@ -59,7 +59,16 @@ const About = () => {
 
     { line: `     ]`, number: 22 },
     { line: `   }`, number: 23 },
-    { line: ` }`, number: 24 },
+    {
+      line: `   nextUp() {`,
+      number: 24,
+    },
+    {
+      line: `     return [ 'Docker', 'Redis', 'Proxies', 'Puppeteer', 'Vitest', 'Cypress' ]`,
+      number: 25,
+    },
+    { line: `   }`, number: 26 },
+    { line: ` }`, number: 27 },
   ];
 
   return (
