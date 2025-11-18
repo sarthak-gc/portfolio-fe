@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import ProjectHeading from "@/Components/Projects/ProjectHeading";
+import useProjects from "@/hooks/useProjects";
 import {
-  useTransition,
   animated,
-  useSpringRef,
   SpringValue,
+  useSpringRef,
+  useTransition,
 } from "@react-spring/web";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import styles from "../styles.module.css";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import Cards from "../Components/Projects/Cards/Cards";
-import ProjectHeading from "@/Components/Projects/ProjectHeading";
 import { useScrollStore } from "../Store/Refs/useRefToScroll";
-import useProjects from "@/hooks/useProjects";
+import styles from "../styles.module.css";
 
 export interface PagePropI {
   style: {
@@ -79,7 +79,19 @@ const Projects = () => {
   }, [index, transRef]);
 
   if (loading || error) {
-    return <div className="bg-black w-full h-full"></div>;
+    return (
+      <div className="bg-black text-white w-full h-full flex items-center justify-center">
+        {loading ? "Loading Projects" : "Error Loading Projects"}
+      </div>
+    );
+  }
+
+  if (projects.length == 0) {
+    return (
+      <div className="bg-black text-white w-full h-full flex items-center justify-center">
+        Loading Projects...
+      </div>
+    );
   }
   return (
     <motion.div

@@ -18,7 +18,10 @@ const useProjects = () => {
         );
         setProjects(response.data.data);
       } catch (err) {
-        if (err instanceof AxiosError) setError(err.response?.data);
+        if (err instanceof AxiosError) {
+          setError(err.response?.data);
+          if (err.message == "Network Error") setProjects([]);
+        }
       } finally {
         setLoading(false);
       }
@@ -26,6 +29,7 @@ const useProjects = () => {
     fetchProjects();
   }, []);
 
+  console.log(error, loading);
   return { projects, loading, error };
 };
 
