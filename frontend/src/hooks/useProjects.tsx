@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import axios, { AxiosError } from "axios";
 import { type ProjectProps } from "@/Pages/Projects";
+import axios, { AxiosError } from "axios";
 
 const useProjects = () => {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
